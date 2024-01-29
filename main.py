@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.staticfiles import StaticFiles
 
+# 터미널에 uvicorn main:app --reload 실행!!!
+
 app = FastAPI()
 
 class Memo(BaseModel):

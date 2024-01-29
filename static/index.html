@@ -5,18 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>어썸한 메모~!</title>
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Bohyeon";
+    }
+
+    body {
+      background-color: #efefef;
+    }
+
+    @font-face {
+      font-family: "Bohyeon";
+      src: url("/Bohyeon.woff") format("woff");
+    }
+
+    .title {
+      font-size: 80px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .memo-board {
+      background-color: #fff;
+      margin: 20px 100px;
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    #memo-list {
+      display: flex;
+      flex-flow: wrap;
+      gap: 40px;
+    }
+
+    .memo {
+      background-color: #fcf0ee;
+      width: 250px;
+      height: 250px;
+      padding: 20px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      font-size: 30px;
+      font-family: "Bohyeon";
+      position: relative;
+    }
+
+    .edit-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+    }
+
+    .del-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 50px;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      font-size: 25px;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .memo-form {
+      width: 250px;
+      height: 250px;
+      padding: 20px;
+      background-color: #fcf0ee;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #memo-input {
+      width: 100%;
+      height: 200px;
+
+      background-color: transparent;
+      border: none;
+      resize: none;
+      font-size: 30px;
+      font-family: "Bohyeon";
+    }
+
+    #memo-input:focus {
+      outline: none;
+    }
+
+    #memo-submit {
+      margin-top: 10px;
+    }
+  </style>
   <body>
-    <form id="memo-form">
-      <label for="memo-input">메모를 입력하세요</label>
-      <input
-        type="text"
-        id="memo-input"
-        required
-        placeholder="여기에 메모를 입력해주세요"
-      />
-      <button id="memo-submit" type="submit">생성</button>
-    </form>
-    <ul id="memo-ul"></ul>
+    <div class="title">MEMO BOARD</div>
+    <div class="memo-board">
+      <div id="memo-list"></div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
